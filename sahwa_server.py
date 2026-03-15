@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-SeizeSafe Server v2.0
+Sahwa Server v2.0
 Real-Time Neurological Event Monitoring System
 """
 
@@ -81,7 +81,7 @@ normal_streak  = 0
 # FLASK
 # ============================================================
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "seizesafe2026"
+app.config["SECRET_KEY"] = "sahwa2026"
 socketio = SocketIO(app, async_mode="threading", cors_allowed_origins="*")
 
 # ============================================================
@@ -240,13 +240,13 @@ def send_email(event_type, timestamp):
         msg = MIMEMultipart()
         msg["From"]    = GMAIL_SENDER
         msg["To"]      = to_email
-        msg["Subject"] = "SEIZESAFE ALERT: " + event_type + " detected"
-        body = ("SeizeSafe Emergency Alert\n\n"
+        msg["Subject"] = "SAHWA ALERT: " + event_type + " detected"
+        body = ("Sahwa Emergency Alert\n\n"
                 "Patient: " + pname + "\n"
                 "Event: "   + event_type + "\n"
                 "Time: "    + timestamp  + "\n\n"
                 "Please check on your patient immediately.\n\n"
-                "-- SeizeSafe Monitoring System")
+                "-- Sahwa Monitoring System")
         msg.attach(MIMEText(body,"plain"))
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as s:
             s.login(GMAIL_SENDER, GMAIL_APP_PASSWORD)
@@ -442,7 +442,7 @@ def generate_pdf(patient_name):
                                 leftMargin=inch, rightMargin=inch)
         styles = getSampleStyleSheet()
         elements = []
-        elements.append(Paragraph("SeizeSafe Monitoring Report", styles["Title"]))
+        elements.append(Paragraph("Sahwa Monitoring Report", styles["Title"]))
         elements.append(Spacer(1, 8))
         elements.append(Paragraph("Generated: " + datetime.now().strftime("%Y-%m-%d %H:%M:%S"), styles["Normal"]))
         elements.append(Paragraph("Patient: " + patient_name, styles["Normal"]))
@@ -502,7 +502,7 @@ def generate_pdf(patient_name):
                    "Consider medication timing adjustment.")
         elements.append(Paragraph(rec, styles["Normal"]))
         elements.append(Spacer(1, 24))
-        elements.append(Paragraph("-- SeizeSafe Automated Report --", styles["Normal"]))
+        elements.append(Paragraph("-- Sahwa Automated Report --", styles["Normal"]))
         doc.build(elements)
         buf.seek(0)
         return buf
@@ -518,7 +518,7 @@ LOGIN_HTML = """<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>SeizeSafe — Setup</title>
+<title>Sahwa — Setup</title>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -746,7 +746,7 @@ html, body {
     <div class="logo">
       <div class="logo-icon">&#10084;</div>
       <div>
-        <div class="logo-main">SEIZESAFE</div>
+        <div class="logo-main">SAHWA</div>
         <div class="logo-sub">NEUROLOGICAL MONITORING SYSTEM</div>
       </div>
     </div>
@@ -797,7 +797,7 @@ html, body {
       &#9654;&nbsp;&nbsp;START MONITORING
     </button>
 
-    <div class="version">SeizeSafe v2.0 &bull; ABU DHABI UNIVERSITY URIC 2026</div>
+    <div class="version">Sahwa v2.0 &bull; ABU DHABI UNIVERSITY URIC 2026</div>
   </div>
 </div>
 
@@ -849,7 +849,7 @@ DASHBOARD_HTML = """<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>SeizeSafe Monitor</title>
+<title>Sahwa Monitor</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
@@ -1082,7 +1082,7 @@ tbody td{padding:6px 8px;font-family:var(--mono);font-size:10px;}
   <div class="logo">
     <div class="logo-icon">&#10084;</div>
     <div>
-      <div class="logo-text">SEIZESAFE</div>
+      <div class="logo-text">SAHWA</div>
       <div class="logo-sub">NEUROLOGICAL MONITORING SYSTEM</div>
     </div>
   </div>
@@ -1344,7 +1344,7 @@ socket.on('critical_alert', d => {
 
 let notifTimer = null;
 socket.on('show_notification', d => { showNotif(d.message, d.type || 'info'); });
-socket.on('connect', () => { showNotif('Connected to SeizeSafe server', 'success'); });
+socket.on('connect', () => { showNotif('Connected to Sahwa server', 'success'); });
 
 function showNotif(msg, type) {
   const el = document.getElementById('notification');
@@ -1430,7 +1430,7 @@ def report():
     pdf   = generate_pdf(pname)
     if pdf is None:
         return "PDF generation failed. Install reportlab.", 500
-    fname = "SeizeSafe_Report_" + datetime.now().strftime("%Y%m%d_%H%M") + ".pdf"
+    fname = "Sahwa_Report_" + datetime.now().strftime("%Y%m%d_%H%M") + ".pdf"
     resp  = make_response(pdf.getvalue())
     resp.headers["Content-Type"]        = "application/pdf"
     resp.headers["Content-Disposition"] = "attachment; filename=" + fname
@@ -1580,7 +1580,7 @@ def load_episodes_from_disk():
 
 def main():
     print("=" * 60)
-    print("  SeizeSafe Monitoring System v2.0")
+    print("  Sahwa Monitoring System v2.0")
     print("  Abu Dhabi University — URIC 2026")
     print("=" * 60)
     load_episodes_from_disk()
@@ -1595,7 +1595,7 @@ def main():
     port = int(os.environ.get("PORT", WEB_PORT))
     print("[Web] Running on port " + str(port))
     print("[WS]  ESP32 connects to wss://YOUR-APP.up.railway.app/esp32")
-    socketio.run(app, host="0.0.0.0", port=port, debug=False, use_reloader=False, allow_unsafe_werkzeug=True)
+    socketio.run(app, host="0.0.0.0", port=port, debug=False, use_reloader=False)
 
 
 if __name__ == "__main__":

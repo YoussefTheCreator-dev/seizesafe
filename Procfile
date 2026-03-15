@@ -1,1 +1,1 @@
-web: python seizesafe_server.py
+web: python sahwa_server.py
