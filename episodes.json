@@ -1,0 +1,86 @@
+[
+  {
+    "type": "SEIZURE",
+    "start_time": "2026-04-25T18:49:00.095459",
+    "end_time": "2026-04-25T18:49:18.311209",
+    "duration_seconds": 18,
+    "severity": "CRITICAL"
+  },
+  {
+    "type": "SEIZURE",
+    "start_time": "2026-04-25T18:50:12.508632",
+    "end_time": "2026-04-25T18:50:44.802343",
+    "duration_seconds": 32,
+    "severity": "CRITICAL"
+  },
+  {
+    "type": "SEIZURE",
+    "start_time": "2026-04-25T18:51:03.544968",
+    "end_time": "2026-04-25T18:51:34.335111",
+    "duration_seconds": 30,
+    "severity": "CRITICAL"
+  },
+  {
+    "type": "SEIZURE",
+    "start_time": "2026-04-25T18:56:25.760942",
+    "end_time": "2026-04-25T18:56:48.562501",
+    "duration_seconds": 22,
+    "severity": "CRITICAL"
+  },
+  {
+    "type": "SEIZURE",
+    "start_time": "2026-04-25T18:57:19.580305",
+    "end_time": "2026-04-25T18:58:07.427392",
+    "duration_seconds": 47,
+    "severity": "CRITICAL"
+  },
+  {
+    "type": "SEIZURE",
+    "start_time": "2026-04-25T18:58:48.866743",
+    "end_time": "2026-04-25T18:59:35.360319",
+    "duration_seconds": 46,
+    "severity": "CRITICAL"
+  },
+  {
+    "type": "SEIZURE",
+    "start_time": "2026-04-25T19:00:40.711439",
+    "end_time": "2026-04-25T19:01:28.944075",
+    "duration_seconds": 48,
+    "severity": "CRITICAL"
+  },
+  {
+    "type": "SEIZURE",
+    "start_time": "2026-04-25T19:13:37.498992",
+    "end_time": "2026-04-25T19:14:04.472047",
+    "duration_seconds": 26,
+    "severity": "CRITICAL"
+  },
+  {
+    "type": "FALL",
+    "start_time": "2026-04-25T19:14:10.047836",
+    "end_time": "2026-04-25T19:14:37.249772",
+    "duration_seconds": 27,
+    "severity": "CRITICAL"
+  },
+  {
+    "type": "SEIZURE",
+    "start_time": "2026-04-25T19:15:54.636256",
+    "end_time": "2026-04-25T19:16:18.226503",
+    "duration_seconds": 23,
+    "severity": "CRITICAL"
+  },
+  {
+    "type": "FALL",
+    "start_time": "2026-04-25T19:17:32.909162",
+    "end_time": "2026-04-25T19:17:50.006235",
+    "duration_seconds": 17,
+    "severity": "CRITICAL"
+  },
+  {
+    "type": "SEIZURE",
+    "start_time": "2026-04-29T13:42:31.569402",
+    "end_time": "2026-04-29T13:43:24.571837",
+    "duration_seconds": 53,
+    "severity": "CRITICAL"
+  }
+]
