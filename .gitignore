@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Data collection logs
+*.log
+
+# Redundant server versions
+sahwa_server_claude*.py
+sahwa_server_full.py
+
+# Redundant replay scripts
+replay_demo_cloud*.py
+
+# Chat logs
+sahwa_claude_chat.txt
+
+# Temporary/Extracted files
+extracted_files/
+
+# Alternative models (uncomment if you want to keep them)
+# ankle_model.pkl
+# ankle_scaler.pkl
+# ankle_xgb_model.pkl
+# wrist_model.pkl
+# wrist_scaler.pkl
+# wrist_xgb_model.pkl
