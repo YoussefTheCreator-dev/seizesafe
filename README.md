@@ -1,4 +1,4 @@
-# Sahwa Monitoring System v2.0
+# Fall Detection System v2.0
 
 This project was developed at Abu Dhabi University (URIC 2026). It features a real-time dashboard for monitoring sensor data (wrist and ankle) and performing live inference using machine learning models.
 
@@ -10,8 +10,8 @@ The project is ready for deployment on platforms like Railway, Heroku, or locall
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/YoussefTheCreator-dev/sahwa-dashboard.git
-   cd sahwa-dashboard
+   git clone https://github.com/YoussefTheCreator-dev/fall-detection-dashboard.git
+   cd fall-detection-dashboard
    ```
 
 2. **Install dependencies:**
